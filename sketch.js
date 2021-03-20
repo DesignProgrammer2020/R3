@@ -16,7 +16,7 @@ function setup() {
   textSize(24);
   imageMode(CENTER);
   frameRate(12);
-  text(“Click me”, 50, 575);
+  text("Click me", 50, 575);
   console.log(birds);
 }
 
@@ -33,17 +33,17 @@ function draw() {
   }
 }
 
-Function randomizer() {
+function randomizer(){
   animating = false;
-  If(birds[0]) {
+  if(birds[0]) {
     background(200, 220, 240);
     clear();
     randomIndex = int(random(birds.length));
     text(birds[randomIndex].name, 300, 300);
     birds.splice(randomIndex, 1);
-  } else {
+  }else{
     background();
-    text(That’ s all!”, 200, 200)
+    text("That's all!", 200, 200)
   }
 }
 
