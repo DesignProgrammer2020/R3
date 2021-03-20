@@ -1,81 +1,53 @@
-let birds = [
-  {name: "cardinal",
-    color: "red"},
-  {name: "lazuli bunting",
-    color: "cyan"},
-  {name: "bluebird",
-    color: "bright blue"},
-  {name: "hummingbird",
-    color: "green and pink"},
-  {name: "house finch",
-    color: "pink"},
-  {name: "sandpiper", color: "light brown"},
-  {name: "robin",
-    color: "black and orange"},
-  {name: "goldfinch",
-    color: "yellow"},
-  {name: "blue jay",
-    color: "light blue"},
-  {name: "painted bunting",
-    color: "rainbow"},
-  {name: "flamingo",
-    color: "pink"},
-  {name: "mockingbird", color: "gray"}
-];
-
-
 let randomIndex;
-let animating;
+let animating = false;
+let birds = [];
+let img;
+let imageCounter = 0;
 
-function setup() {
-  createCanvas(600, 600);
-  background(200,220,240);
-  textSize(26);
-  fill(0);
-  text("Click the Randomizer.", 100, 100);
-  textAlign(CENTER);
-  //fill(100,100,255);
-  imageMode(CENTER);
-  frameRate(0.5);
-  text("start clicking", width*0.5, height*0.5);
-  button = createButton('click me');
-  button.position(width*0.05, height*0.95);
-  button.mousePressed();
-}
-
-function draw() {
-
-  if (animating==true){
-
-  background (random(200,255), random(100,255), random(100,255));
-  fill(255);
-  ellipse(random(width), random(height), random(width), random(height));
-  triangle(random(width), random(height), random(width), random(height), random(width), random(height));
-  rect(random(width), random(height), random(width), random(height));
+function preload() {
+  for (let i = 0; i <= 15; i++) {
+    birds[i] = loadImage(`assets/birds_$ {i}.JPG`)
   }
 }
 
+function setup() {
+  createCanvas(600, 600);
+  background(200, 220, 240);
+  textSize(24);
+  imageMode(CENTER);
+  frameRate(12);
+  text(“Click me”, 50, 575);
+  console.log(birds);
+}
 
-function randomizer(){
+function draw() {
+  if (animating == true) {
+    clear();
+    image(birds[0], width * 0.5, height * 0.5);
+    if (imageCounter < trolls.length - 1) {
+      imageCounter++;
+      console.log(imageCounter);
+    } else {
+      imageCounter = 0;
+    }
+  }
+}
 
-  animating=false;
-  if (birds[0]) {
-    background(200,220,240);
-    fill(random(0,200), random(0,100), random(0,100));
+Function randomizer() {
+  animating = false;
+  If(birds[0]) {
+    background(200, 220, 240);
+    clear();
     randomIndex = int(random(birds.length));
-    text(`The ${birds[randomIndex].name} is ${birds[randomIndex].color}.`, 200, 100);
+    text(birds[randomIndex].name, 300, 300);
     birds.splice(randomIndex, 1);
   } else {
-    background(200,220,240);
-    fill(random(0,200), random(0,100), random(0,100));
-    text("That's all!", 100, 100);
+    background();
+    text(That’ s all!”, 200, 200)
   }
 }
 
 function mousePressed() {
-
-  animating=true;
-
-  setTimeout(randomizer, 1000);
-
+  animating = true;
+  setTimeout(randomizer, 2000);
 }
