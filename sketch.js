@@ -39,7 +39,7 @@ function setup() {
   frameRate(0.5);
   text("start clicking", width*0.5, height*0.5);
   button = createButton('click me');
-  button.position(width*0.05, height*0.9);
+  button.position(width*0.05, height*0.95);
   button.mousePressed();
 }
 
