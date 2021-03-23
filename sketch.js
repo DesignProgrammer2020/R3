@@ -1,38 +1,7 @@
+//images
 let plastics = [];
 
-let animals = [{
-    name: "cardinal",
-    thing: "plastic bottles"
-  },
-  {
-    name: "pelican",
-    thing: "plastic cups"
-  },
-  {
-    name: "kangaroo",
-    thing: "kazoos"
-  },
-  {
-    name: "sea turtle",
-    thing: "straws"
-  },
-  {
-    name: "squirrel",
-    thing: "streamers"
-  },
-  {
-    name: "peacock",
-    thing: "plastic utensils"
-  },
-  {
-    name: "sea lion",
-    thing: "soda cans"
-  },
-  {
-    name: "shark",
-    thing: "styrofoam plates"
-  }
-];
+let animals = ["cardinal", "pelican", "kangaroo", "sea turtle", "squirrel", "peacock", "sea lion", "shark"]
 
 let button;
 let randomIndex;
@@ -58,7 +27,6 @@ function setup() {
 
   //click the button
   button = createButton("Click to randomize");
-
   button.mousePressed(buttonPressed);
 }
 
@@ -86,7 +54,7 @@ function randomizer() {
     randomIndexPlastics = int(random(plastics.length));
 
     image(plastics[randomIndexPlastics], width * 0.5, height * 0.5);
-    text(`The ${animals[randomIndexAnimals].name} dislikes this.`, width * 0.15, height * 0.82);
+    text(`The ${animals} dislikes this.`, width * 0.15, height * 0.82);
 
     animals.splice(randomIndexAnimals, 1);
 
