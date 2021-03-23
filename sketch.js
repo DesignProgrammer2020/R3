@@ -61,7 +61,6 @@ function randomizer() {
     animals.splice(randomIndexAnimals, 1);
 
   } else {
-    // background at the end
     background(80, 180, 80);
     textSize(48);
     text("Don't litter!", width*0.25, height*0.5);
