@@ -24,10 +24,12 @@ function setup() {
   imageMode(CENTER);
   frameRate(12);
   text("Plastics harm animals!", 100, 300);
+  text("Click to see.", 100, 350);
 
   //click the button
   button = createButton("Click to randomize");
   button.mousePressed(buttonPressed);
+  button.class("randomizerButton");
 }
 
 function draw() {
@@ -54,13 +56,14 @@ function randomizer() {
     randomIndexPlastics = int(random(plastics.length));
 
     image(plastics[randomIndexPlastics], width * 0.5, height * 0.5);
-    text(`The ${animals} dislikes this.`, width * 0.15, height * 0.82);
+    text(`The ${animals[randomIndexAnimals]} dislikes this.`, width * 0.15, height * 0.82);
 
     animals.splice(randomIndexAnimals, 1);
 
   } else {
     background(80, 180, 80);
-    text("Don't litter!", 150, 300);
+    textSize(48);
+    text("Don't litter!", width*0.25, height*0.5);
   }
 }
 
