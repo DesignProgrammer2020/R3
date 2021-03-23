@@ -54,7 +54,7 @@ function randomizer() {
     randomIndexPlastics = int(random(plastics.length));
 
     image(plastics[randomIndexPlastics], width * 0.5, height * 0.5);
-    text(`The ${animals} dislikes this.`, width * 0.15, height * 0.82);
+    text(`The ${animals[randomIndexAnimals]} dislikes this.`, width * 0.15, height * 0.82);
 
     animals.splice(randomIndexAnimals, 1);
 
