@@ -1,22 +1,37 @@
 let plastics = [];
 
-let animals = [
-  {name: "cardinal",
-    thing: "plastic bottles"},
-  {name: "pelican",
-    thing: "plastic cups"},
-  {name: "kangaroo",
-    thing: "kazoos"},
-  {name: "sea turtle",
-    thing: "straws"},
-  {name: "squirrel",
-    thing: "streamers"},
-  {name: "peacock",
-    thing: "plastic utensils"},
-  {name: "sea lion",
-    thing: "soda cans"},
-  {name: "shark",
-    thing: "styrofoam plates"}
+let animals = [{
+    name: "cardinal",
+    thing: "plastic bottles"
+  },
+  {
+    name: "pelican",
+    thing: "plastic cups"
+  },
+  {
+    name: "kangaroo",
+    thing: "kazoos"
+  },
+  {
+    name: "sea turtle",
+    thing: "straws"
+  },
+  {
+    name: "squirrel",
+    thing: "streamers"
+  },
+  {
+    name: "peacock",
+    thing: "plastic utensils"
+  },
+  {
+    name: "sea lion",
+    thing: "soda cans"
+  },
+  {
+    name: "shark",
+    thing: "styrofoam plates"
+  }
 ];
 
 let button;
@@ -26,7 +41,7 @@ let img;
 let imageCounter = 0;
 
 function preload() {
-  for (let i = 0; i <=15; i++) {
+  for (let i = 0; i <= 15; i++) {
     plastics[i] = loadImage(`pictures/plastics_${i}.jpg`)
   }
 }
@@ -53,7 +68,7 @@ function draw() {
 
     //images of plastics
     imageCounter %= plastics.length;
-    image(plastics[imageCounter],width/2, height/2);
+    image(plastics[imageCounter], width / 2, height / 2);
     if (imageCounter < plastics.length - 1) {
       imageCounter++;
     } else {
@@ -71,7 +86,7 @@ function randomizer() {
     randomIndexPlastics = int(random(plastics.length));
 
     image(plastics[randomIndexPlastics], width * 0.5, height * 0.5);
-    text(`The ${animals[randomIndexAnimals].name} dislikes this.`, width * 0.15, height*0.82);
+    text(`The ${animals[randomIndexAnimals].name} dislikes this.`, width * 0.15, height * 0.82);
 
     animals.splice(randomIndexAnimals, 1);
 
