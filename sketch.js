@@ -56,7 +56,6 @@ function setup() {
   imageMode(CENTER);
   frameRate(12);
   text("Plastics harm animals!", 100, 300);
-  //text("Click to see.", 100, 350);
 
   //click the button
   button = select("#randButton");
