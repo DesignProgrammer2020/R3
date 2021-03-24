@@ -89,7 +89,8 @@ function randomizer() {
     randomIndexPlastics = int(random(plastics.length));
 
     image(plastics[randomIndexPlastics], width * 0.5, height * 0.5);
-    fill(random(80, 200), random(100, 220), random(80, 200));
+    //random visible colors for the display text
+fill(random(100, 240), random(100, 180), random(100, 240));
     text(`The ${animals[randomIndexAnimals].name} dislikes this.`, width * 0.15, height * 0.82);
 
     animals.splice(randomIndexAnimals, 1);
