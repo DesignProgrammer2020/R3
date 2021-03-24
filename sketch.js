@@ -61,7 +61,7 @@ function setup() {
   button = select("#randButton");
   button.mousePressed(buttonPressed);
   button.class("randomizerButton");
-  text("Click to see.", 100, 350);
+  text("Click to see.");
 }
 
 function draw() {
