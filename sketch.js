@@ -59,7 +59,6 @@ function setup() {
   text("Click to see.", 100, 350);
 
   //click the button
-  //button = createButton("Click to randomize");
   button = select("#randButton");
   button.mousePressed(buttonPressed);
   button.class("randomizerButton");
